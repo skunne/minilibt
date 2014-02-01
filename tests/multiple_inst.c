@@ -14,14 +14,20 @@ int				main(void)
 	strcpy(buff, "abcdefghijklmnopqrstuvwxyz");
 	s2 = buff;
 	s1 = tgetstr("mr", &s2);
-	s2 -= 1;
+	//s2 -= 1;
 	tgetstr("us", &s2);
 	strcpy(s2, "coucou");
 	s2 += 6;
 	tgetstr("do", &s2);
-	s2 -= 1;
+	//s2 -= 1;
 	tgetstr("me", &s2);
 	write(1, s1, 199);		// <---- Un seul write !
+							// Attention, ca ne marchera pas avec tputs
+							// a moins d'enlever les caracteres /0
+							// inseres par tgetstr a la fin de chaque
+							// commande. On peut le faire a l'aide
+							// d'un simple decrement de s2.
+							// (mais c'est moins pratique)
 	//tgetstr("us", &(s2 - 1));
 	//tgetstr("us", &(*&s2 - 1));
 	//tputs(s1, 1, &mlt_tputs_putchar);
