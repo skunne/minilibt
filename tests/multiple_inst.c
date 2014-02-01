@@ -4,6 +4,16 @@
 #include <libc.h>
 #include <__mlt.h>
 
+/*
+**  Ce programme de test ecrit en une seule fois
+** plusieurs caps, puis du texte (coucou), puis de
+** nouveau une cap puis encore du texte. (xyz)
+**
+**  Cela prouve bien que l'on peut ecrire une 
+** "image" formattee et en couleurs en un seul
+** write sur le terminal. :)
+*/
+
 int				main(void)
 {
 	char		buff[1024];
