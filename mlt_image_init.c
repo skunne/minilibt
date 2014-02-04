@@ -6,7 +6,7 @@
 /*   By: avannest <avannest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/04 11:54:06 by avannest          #+#    #+#             */
-/*   Updated: 2014/02/04 12:16:22 by avannest         ###   ########.fr       */
+/*   Updated: 2014/02/04 12:30:55 by avannest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,14 @@ t_tpixel		**mlt_new_image(int dim_x, int dim_y)
 	int			i;
 
 	new_img = (t_tpixel **)malloc(sizeof(t_tpixel *) * (dim_y + 1));
+	if (new_img == NULL)
+		return (NULL);
 	i = 0;
 	while (i < dim_y)
 	{
 		new_img[i] = (t_tpixel *)malloc(sizeof(t_tpixel) * dim_x);
+		if (new_img[i] == NULL)
+			return (NULL);
 		++i;
 	}
 	new_img[i] = NULL;
