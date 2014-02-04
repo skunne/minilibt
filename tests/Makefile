@@ -1,1 +1,1 @@
-CFLAGS	=	-I../includes -L.. -lmlt -ltermcap
+CFLAGS	=	-I.. -I../includes -L.. -lmlt -ltermcap
