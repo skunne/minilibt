@@ -6,7 +6,7 @@
 #    By: skunne <skunne@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/19 14:44:40 by skunne            #+#    #+#              #
-#    Updated: 2014/02/04 12:10:54 by avannest         ###   ########.fr        #
+#    Updated: 2014/02/06 13:23:01 by avannest         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -14,8 +14,7 @@ NAME = libmlt.a
 
 CC = gcc
 
-SRC = mlt_util.c mlt_signal.c mlt_loop.c mlt_put.c mlt_init.c \
-	  mlt_image_init.c
+SRC = mlt_util.c mlt_signal.c mlt_loop.c mlt_put.c mlt_init.c
 
 OBJ = $(SRC:.c=.o)
 
