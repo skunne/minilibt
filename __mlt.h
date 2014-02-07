@@ -6,7 +6,7 @@
 /*   By: skunne <skunne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/13 15:53:19 by skunne            #+#    #+#             */
-/*   Updated: 2014/01/19 21:42:22 by skunne           ###   ########.fr       */
+/*   Updated: 2014/02/06 14:57:58 by avannest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,12 @@ void	mlt_expose_hook(t_mlt *mlt_ptr,
 						void (*f)(int x, int y, void *),
 						void *param);
 void	mlt_loop_hook(t_mlt *mlt_ptr, void (*f)(void *), void *param);
+
+/*
+** mlt_image.c
+*/
+char	*mlt_new_img(int dim_x, int dim_y);
+void	mlt_char_put(int x, int y, int fg, int bg, char c);
 
 #endif /* !__MLT_H */
 
