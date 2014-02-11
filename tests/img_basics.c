@@ -6,18 +6,18 @@
 /*   By: avannest <avannest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/04 12:05:27 by avannest          #+#    #+#             */
-/*   Updated: 2014/02/04 12:09:21 by avannest         ###   ########.fr       */
+/*   Updated: 2014/02/11 16:30:05 by avannest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "__mlt_image.h"
+#include "__mlt.h"
 
 int				main(void)
 {
-	t_tpixel	**img;
+	t_mlt_img	*img;
 
-	img = mlt_new_image(5, 5);
-	mlt_free_image(img);
+	img = mlt_new_img(5, 5);
+	mlt_free_img(&img);
 	return (0);
 }
 

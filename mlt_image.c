@@ -6,12 +6,13 @@
 /*   By: avannest <avannest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/06 14:37:52 by avannest          #+#    #+#             */
-/*   Updated: 2014/02/11 12:52:44 by avannest         ###   ########.fr       */
+/*   Updated: 2014/02/11 16:27:00 by avannest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>		/* malloc */
 #include <libc.h>		/* sprintf */
+#include "__mlt.h"
 
 /*
 **  If we ever implement image size.
@@ -34,7 +35,7 @@ t_mlt_img	*mlt_new_img(int dim_x, int dim_y)
 
 void		mlt_free_img(t_mlt_img **img)
 {
-	free(*img->img);
+	free((*img)->img);
 	free(*img);
 	(*img) = NULL;
 }

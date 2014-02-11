@@ -6,7 +6,7 @@
 /*   By: skunne <skunne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/13 15:11:36 by skunne            #+#    #+#             */
-/*   Updated: 2014/02/11 12:52:38 by avannest         ###   ########.fr       */
+/*   Updated: 2014/02/11 16:24:59 by avannest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ void		mlt_string_put(int x, int y, int fg, int bg, char *str)
 	write(SPE_OUT, str, strlen(str));
 }
 
-void		mlt_img_put(t_mlt_img *str)
+void		mlt_img_put(t_mlt_img *img)
 {
+	write(1, img->img, img->co * img->li * 23);
 }
 
