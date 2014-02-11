@@ -6,7 +6,7 @@
 /*   By: skunne <skunne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/13 15:53:19 by skunne            #+#    #+#             */
-/*   Updated: 2014/02/06 14:57:58 by avannest         ###   ########.fr       */
+/*   Updated: 2014/02/11 12:52:48 by avannest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,13 @@ typedef struct				s_mlt
 	struct winsize			w;
 }							t_mlt;
 
+typedef struct				s_mlt_img
+{
+	char					*img;
+	int						co;
+	int						li;
+}							t_mlt_img;
+
 /*
 ** mlt_util.c
 */
@@ -64,6 +71,7 @@ void	mlt_exit(t_mlt *mlt_ptr);
 */
 void	mlt_char_put(int x, int y, int fg, int bg, char c);
 void	mlt_string_put(int x, int y, int fg, int bg, char *str);
+void	mlt_img_put(t_mlt_img *str);
 
 /*
 ** mlt_loop and hooks
@@ -78,8 +86,9 @@ void	mlt_loop_hook(t_mlt *mlt_ptr, void (*f)(void *), void *param);
 /*
 ** mlt_image.c
 */
-char	*mlt_new_img(int dim_x, int dim_y);
-void	mlt_char_put(int x, int y, int fg, int bg, char c);
+t_mlt_img	*mlt_new_img(int dim_x, int dim_y);
+void	mlt_free_img(t_mlt_img *img);
+void	mlt_char_put_img(t_mlt_img *img, int x, int y, int fg, int bg, char c);
 
 #endif /* !__MLT_H */
 
