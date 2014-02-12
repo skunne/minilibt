@@ -6,7 +6,7 @@
 /*   By: avannest <avannest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/06 14:37:52 by avannest          #+#    #+#             */
-/*   Updated: 2014/02/11 16:27:00 by avannest         ###   ########.fr       */
+/*   Updated: 2014/02/12 15:43:51 by avannest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 t_mlt_img	*mlt_new_img(int dim_x, int dim_y)
 {
 	t_mlt_img	*new_img;
+	int			i;
 
 	if (!(new_img = (t_mlt_img *)malloc(sizeof(t_mlt_img))))
 		return (NULL);
@@ -27,6 +28,13 @@ t_mlt_img	*mlt_new_img(int dim_x, int dim_y)
 	{
 		free(new_img);
 		return (NULL);
+	}
+	// now we need to fill the img with spaces
+	i = 0;
+	while (i < dim_x * dim_y)
+	{
+		mlt_char_put_img(new_img, i / dim_y, i % dim_y, 231, 0, ' ');
+		++i;
 	}
 	new_img->co = dim_x;
 	new_img->li = dim_y;
